@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+        </title>
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css"
+        />
+        <link rel="stylesheet" href="my.css" />
+        <style>
+            /* App custom styles */
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.js">
+        </script>
+        <script src="my.js">
+        </script>
+    </head>
+    
+    <body>
+        <!-- Home -->
+        <div data-role="page" id="page1">
+            <div data-theme="a" data-role="header">
+                <a data-role="button" data-inline="true" data-transition="fade" href="#page1"
+                data-icon="grid" data-iconpos="notext" class="ui-btn-right">
+                </a>
+                <h3>
+                    Next Fair
+                </h3>
+                <a data-role="button" data-inline="true" data-transition="fade" href="#page1"
+                data-icon="home" data-iconpos="left" class="ui-btn-left">
+                    GTMob
+                </a>
+            </div>
+            <div data-role="content" style="padding: 15px">
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#page1" data-theme="" data-icon="home">
+                            Fair Info
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page2" data-theme="" data-icon="search">
+                            Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page3" data-theme="" data-icon="check">
+                            My Checklist
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Search -->
+        <div data-role="page" id="page2">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Search Jobs
+                </h3>
+                <a data-role="button" data-transition="fade" href="#page2" data-icon="home"
+                data-iconpos="left" class="ui-btn-left">
+                    GTMob
+                </a>
+                <a data-role="button" data-transition="fade" href="#page2" data-icon="grid"
+                data-iconpos="notext" class="ui-btn-right">
+                </a>
+            </div>
+            <div data-role="content" style="padding: 15px">
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput1">
+                            Name
+                        </label>
+                        <input name="" id="textinput1" placeholder="" value="" type="text">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="selectmenu2">
+                        Job Type
+                    </label>
+                    <select name="selectmenu2" id="selectmenu2">
+                        <option value="option1">
+                            Select One...
+                        </option>
+                        <option value="value">
+                            Part Time
+                        </option>
+                        <option value="value">
+                            Full Time
+                        </option>
+                        <option value="value">
+                            Co-op
+                        </option>
+                        <option value="value">
+                            Internship
+                        </option>
+                    </select>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput2">
+                            Title
+                        </label>
+                        <input name="" id="textinput2" placeholder="" value="" type="text">
+                    </fieldset>
+                </div>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#page1" data-theme="" data-icon="home">
+                            Fair Info
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page2" data-theme="" data-icon="search">
+                            Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page3" data-theme="" data-icon="check">
+                            My Checklist
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- My Checklist -->
+        <div data-role="page" id="page3">
+            <div data-theme="a" data-role="header">
+                <a data-role="button" data-transition="fade" href="#page3" data-icon="grid"
+                data-iconpos="notext" class="ui-btn-right">
+                </a>
+                <h3>
+                    My Checklist
+                </h3>
+                <a data-role="button" data-transition="fade" href="#page3" data-icon="home"
+                data-iconpos="left" class="ui-btn-left">
+                    GTMob
+                </a>
+            </div>
+            <div data-role="content" style="padding: 15px">
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="searchinput1">
+                        </label>
+                        <input name="" id="searchinput1" placeholder="" value="" type="search">
+                    </fieldset>
+                </div>
+                <ul data-role="listview" data-divider-theme="b" data-inset="true">
+                    <li data-theme="c">
+                        <a href="#page1" data-transition="slide">
+                            Company 1
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page1" data-transition="slide">
+                            Company 2
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page1" data-transition="slide">
+                            Company 3
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#page1" data-theme="" data-icon="home">
+                            Fair Info
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page2" data-theme="" data-icon="search">
+                            Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page3" data-theme="" data-icon="check">
+                            My Checklist
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Search Results -->
+        <div data-role="page" id="page4">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Results
+                </h3>
+                <a data-role="button" data-rel="back" data-transition="fade" href="#page4"
+                data-icon="arrow-l" data-iconpos="left" class="ui-btn-left">
+                    Back
+                </a>
+            </div>
+            <div data-role="content" style="padding: 15px">
+                <div data-role="fieldcontain">
+                    <label for="selectmenu1">
+                    </label>
+                    <select name="selectmenu1" id="selectmenu1" data-mini="true">
+                        <option value="option1">
+                            Sort By:
+                        </option>
+                        <option value="value">
+                            Name
+                        </option>
+                        <option value="value">
+                            Distance from GT
+                        </option>
+                    </select>
+                </div>
+                <ul data-role="listview" data-divider-theme="b" data-inset="true">
+                    <li data-role="list-divider" role="heading">
+                        A
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page1" data-transition="slide">
+                            A Company
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page1" data-transition="slide">
+                            AB Company
+                        </a>
+                    </li>
+                    <li data-role="list-divider" role="heading">
+                        B
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page1" data-transition="slide">
+                            B Company
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Company Info -->
+        <div data-role="page" id="page5">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    A Company
+                </h3>
+                <a data-role="button" data-transition="fade" href="#page5" data-icon="arrow-l"
+                data-iconpos="left" class="ui-btn-left">
+                    Back
+                </a>
+            </div>
+            <div data-role="content" style="padding: 15px">
+                <h2>
+                    Info goes here.
+                </h2>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#page5" data-theme="" data-icon="star">
+                                Favorite
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page5" data-theme="" data-icon="check">
+                                Add to List
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page5" data-theme="" data-icon="minus">
+                                No Thanks!
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <h5>
+                    Additional info goes here.
+                </h5>
+            </div>
+        </div>
+        <script>
+              //App custom javascript
+        </script>
+    </body>
+
+</html>
