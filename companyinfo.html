@@ -16,7 +16,7 @@
         </script>
         <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.js">
         </script>
-        <script src="my.js">
+        <script src="Javascript/my.js">
         </script>
     </head>
     
@@ -27,7 +27,8 @@
                 data-icon="grid" data-iconpos="notext" class="ui-btn-right">
                 </a>
                 <h3>
-                    Next Fair
+                	<!-- The "companyname" span will dynamically change depending on the company clicked. -->
+                    <span id="companyname">Company Name</span>
                 </h3>
                 <a data-role="button" data-inline="true" data-transition="fade" href="#page1"
                 data-icon="home" data-iconpos="left" class="ui-btn-left">
