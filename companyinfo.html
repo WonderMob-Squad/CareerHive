@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css"
         />
         <link rel="stylesheet" href="my.css" />
+        <link rel="stylesheet" href="addlCSS/jquery.mobile.simpledialog.css" />
         <style>
             /* App custom styles */
         </style>
@@ -16,7 +17,11 @@
         </script>
         <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.js">
         </script>
-        <script src="Javascript/my.js">
+        <script src="JavaScript/my.js">
+        </script>
+        <script src="JavaScript/companyinfoactions.js">
+        </script>
+        <script src="JavaScript/jquery.mobile.simpledialog2.js">
         </script>
     </head>
     
@@ -37,9 +42,9 @@
             </div>
             <div data-role="content" style="padding: 15px">
             	<div data-role="controlgroup" data-type="horizontal">
-					<a href="#" data-role="button">Star</a>
-					<a href="#" data-role="button">Add to List</a>
-					<a href="#" data-role="button">No Thanks!</a>
+					<a href="#" data-role="button" onclick="starClicked($('#companyname').text())">Star</a>
+					<a href="#" data-role="button" onclick="checklistClicked($('#companyname').text())">Add to List</a>
+					<a href="#" data-role="button" onclick="noThanksClicked($('#companyname').text())">No Thanks!</a>
 				</div>
             </div>
         </div>
