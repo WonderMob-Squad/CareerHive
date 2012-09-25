@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>
         </title>
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css"
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-rc.2/jquery.mobile-1.2.0-rc.2.css"
         />
         <link rel="stylesheet" href="my.css" />
         <style>
@@ -14,7 +14,7 @@
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
         </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.js">
+        <script src="http://code.jquery.com/mobile/1.2.0-rc.2/jquery.mobile-1.2.0-rc.2.js">
         </script>
         <script src="JavaScript/my.js">
         </script>
@@ -35,7 +35,37 @@
                 </a>
             </div>
             <div data-role="content" style="padding: 15px">
+            	<ul data-role="listview" data-theme="b" data-filter="true" data-autodividers="true" data-split-icon="check">
+            		<li><a id="company1" href="#">
+            			<h3>Apple, Inc.</h3>
+            			<p>Cupertino, CA</p>
+            		</a><a href="#action" data-rel="popup" data-position-to="window" data-transition="pop">See Actions</a>
+            		</li>
+            		<li><a id="company1" href="#">
+            			<h3>Coca-Cola Company</h3>
+            			<p>Atlanta, GA</p>
+            		</a><a href="#action" data-rel="popup" data-position-to="window" data-transition="pop">See Actions</a>
+            		</li>
+            		<li><a id="company1" href="#">
+            			<h3>Sugar Cube Corner Bakery</h3>
+            			<p>Ponyville, Equestria</p>
+            		</a><a href="#action" data-rel="popup" data-position-to="window" data-transition="pop">See Actions</a>
+            		</li>
+            		<li><a id="company1" href="#">
+            			<h3>Zappos.com</h3>
+            			<p>Henderson, NV</p>
+            		</a><a href="#action" data-rel="popup" data-position-to="window" data-transition="pop">See Actions</a>
+            		</li>
+            	</ul>
+		<div data-role="popup" id="action" data-theme="d" data-overlay-theme="b" class="ui-content" style="max-width:340px;">
+			<h3>Choose an action.</h3>
+			<p>You can add this company to your checklist, your favorites, or block it for good!</p>
+			<a href="#" data-role="button" data-rel="back" data-theme="b" data-icon="check" data-inline="true" data-mini="true">Favorite</a>
+			<a href="#" data-role="button" data-rel="back" data-inline="true" data-mini="true">Add</a>	
+			<a href="#" data-role="button" data-rel="back" data-inline="true" data-mini="true">Block</a>	
+		</div>
             </div>
+
         </div>
 	</body>
 </html>
