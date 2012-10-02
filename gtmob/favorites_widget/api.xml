@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<api>
+	<description>
+		<![CDATA[This is an API to interact with favorites db]]>
+	</description>
+
+	<command id='favorites' security='public'>
+		<description><![CDATA[This simple API lets you add and remove favorites]]></description>
+		
+		<index>
+			<description><![CDATA[This is how you can get a listing of all favorites]]></description>
+			
+			<action file='favorites.php'><![CDATA[listFavorites($_GET['user_id']);]]></action>
+		</index>
+		
+		<get>
+			<description><![CDATA[This is how you can get a specific favorite]]></description>
+			
+			<action file='favorites.php'><![CDATA[getFavorite($_REST['favorite_id']);]]></action>
+		</get>
+		
+		<post>
+			<description><![CDATA[This is how you can create a favorite]]></description>
+			
+			<action file='favorites.php'><![CDATA[addFavorite($_POST['attendant_id'],$_POST['user_id']);]]></action>
+			
+			<param id='favoriteText'>
+				<description><![CDATA[Favorite Text]]></description>
+				<defaultValue><![CDATA[some default favorite text]]></defaultValue>
+				<exampleValue><![CDATA[some example favorite text]]></exampleValue>
+			</param>
+		</post>
+		
+		<put>
+			<description><![CDATA[This is how you can update a favorite]]></description>
+			
+			<action file='favorites.php'><![CDATA[updateFavorite($_REST['favorite'],$_POST['favoriteText']);]]></action>
+			
+			<param id='favoriteText'>
+				<description><![CDATA[Favorite Text To Update]]></description>
+				<defaultValue><![CDATA[some default favorite text update]]></defaultValue>
+				<exampleValue><![CDATA[some example favorite text update]]></exampleValue>
+			</param>
+		</put>
+		
+		<delete>
+			<description><![CDATA[This is how you can delete a favorite]]></description>
+			
+			<action file='favorites.php'><![CDATA[deleteFavorite($_REST['favorite']);]]></action>
+		</delete>
+	</command>
+</api>
