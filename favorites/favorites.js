@@ -60,12 +60,11 @@ $(function() {
 		//Instead of passing around in JS I am doing AJAX so direct links work
 		//JQuery Fetch The Favorite
 		$.ajax({
-			url: "api/favorite/"+favorite_id,
+			url: "api/favorites/"+favorite_id,
 			dataType: "json",
-	        async: false,
-	        success: function(data, textStatus, jqXHR) {
-				//console.log(data);
-	       		$('#edit_favorite_text')[0].value = data.favorite;
+	        success: function(favorite, textStatus, jqXHR) {
+				//console.log(favorite);
+	       		$('#edit_favorite_text')[0].value = favorite.notes;
 	        },
 	        error: ajaxError
 		});
@@ -76,9 +75,8 @@ $(function() {
 		//console.log("Save Button");
 		var favorite_id = $.url().fparam("favorite_id");
 		$.ajax({
-			url: "api/favorite/"+favorite_id,
+			url: "api/favorites/"+favorite_id,
 			dataType: "json",
-	        async: false,
 			data: {'favoriteText': $('#edit_favorite_text')[0].value},
 			headers: {'X-HTTP-Method-Override': 'PUT'},
 			type: 'POST',
@@ -91,9 +89,8 @@ $(function() {
 		//console.log("Remove Button");
 		var favorite_id = $.url().fparam("favorite_id");
 		$.ajax({
-			url: "api/favorite/"+favorite_id,
+			url: "api/favorites/"+favorite_id,
 			dataType: "json",
-	        async: false,
 			type: 'DELETE',
 	        error: ajaxError
 		});

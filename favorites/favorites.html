@@ -1,14 +1,13 @@
 <div data-role="page" id="list_favorites_page">
     <div data-role='header' data-position='inline' data-theme='d'>
-	    <h1>Favorites Widget</h1>
-        <a id='add_favorites_page_button' href='#add_favorites_page' data-transition="slide" data-icon="add" data-iconpos="notext" class="ui-btn-right"></a>
+	    <h1>Favorites</h1>
    	</div>
 	
 	<div id="content" data-role="content">
 		<ul id="favorites_list" data-role="listview" data-inset="true" data-filter="true" data-theme="c" data-divider-theme="b">
 			<script id="favorites_list_row_template" type="text/x-jquery-tmpl">
 				<li class="favorites_list_row" id="favorite_${id}">
-					<a href='#edit_favorites_page&favorite_id=${id}' data-transition="slide">
+					<a href="#edit_favorites_page&favorite_id=${id}" data-transition="slide">
 						<h1>${name}</h1>
 						<h2>Booth: ${booth}</h2>
 						<h3>Dates: ${start_date} - ${end_date}</h3>

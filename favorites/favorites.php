@@ -10,7 +10,7 @@
     
 	
 	function getFavorite($id) {
-		$dbQuery = sprintf("SELECT id,comment FROM comments WHERE id = '%s'",
+		$dbQuery = sprintf("SELECT * FROM favorites WHERE id = %s",
 			mysql_real_escape_string($id));
 		$result=getDBResultRecord($dbQuery);
 		header("Content-type: application/json");
@@ -27,9 +27,9 @@
 		echo json_encode($result);
 	}
 	
-	function updateComment($id,$comment) {
-		$dbQuery = sprintf("UPDATE comments SET comment = '%s' WHERE id = '%s'",
-			mysql_real_escape_string($comment),
+	function updateFavorite($id,$favoriteText) {
+		$dbQuery = sprintf("UPDATE favorites SET notes = '%s' WHERE id = %s",
+			mysql_real_escape_string($favoriteText),
 			mysql_real_escape_string($id));
 		
 		$result = getDBResultAffected($dbQuery);
@@ -38,8 +38,8 @@
 		echo json_encode($result);
 	}
 	
-	function deleteComment($id) {
-		$dbQuery = sprintf("DELETE FROM comments WHERE id = '%s'",
+	function deleteFavorite($id) {
+		$dbQuery = sprintf("DELETE FROM favorites WHERE id = %s",
 			mysql_real_escape_string($id));												
 		$result = getDBResultAffected($dbQuery);
 		
