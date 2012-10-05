@@ -1,15 +1,15 @@
-//console.log('RUNNING FAVORITE JAVASCRIPT');
-//console.log($('#list_favorites_page'));
-//console.log($('#add_favorites_page'));
-//console.log($('#edit_favorites_page'));
+console.log('RUNNING FAVORITE JAVASCRIPT');
+console.log($('#list_favorites_page'));
+console.log($('#add_favorites_page'));
+console.log($('#edit_favorites_page'));
 
 $(function() {
  // Handler for .ready() called.
-	//console.log('ready');
+	console.log('favorites widget loading...');
 
 	//Bind to the create so the page gets updated with the listing
 	$('#list_favorites_page').bind('pagebeforeshow',function(event, ui){
-		//console.log('pagebeforeshow');
+		console.log('list_favorites_page: pagebeforeshow');
 	
 		//Remove the old rows
 		$( ".favorites_list_row" ).remove();
@@ -22,7 +22,7 @@ $(function() {
 				user_id:1
 			},
 	      success: function(data, textStatus, jqXHR) {
-				//console.log(data);
+				console.log("api/favorites:", data);
 	        	//Create The New Rows From Template
 	        	$( "#favorites_list_row_template" ).tmpl( data ).appendTo( "#favorites_list" );
 				$('#favorites_list').listview('refresh');
@@ -35,13 +35,13 @@ $(function() {
 	
 	//Bind the add page clear text
 	$('#add_favorites_page').bind('pagebeforeshow', function() {
-		//console.log("Add Favorite Page");
+		console.log("Add Favorite Page");
 		$('#add_favorite_text')[0].value = "";
 	});
 		
 	//Bind the add page button
 	$('#add_button').bind('click', function() {
-		//console.log("Add Button");
+		console.log("Add Button");
 		$.ajax({
 			url: "api/favorite",
 			dataType: "json",
@@ -54,7 +54,7 @@ $(function() {
 		
 	//Bind the edit page init text
 	$('#edit_favorites_page').bind('pagebeforeshow', function() {
-		//console.log("Edit Favorite Page");
+		console.log("Edit Favorite Page");
 		var favorite_id = $.url().fparam("favorite_id");
 		
 		//Instead of passing around in JS I am doing AJAX so direct links work
@@ -63,7 +63,7 @@ $(function() {
 			url: "api/favorites/"+favorite_id,
 			dataType: "json",
 	        success: function(favorite, textStatus, jqXHR) {
-				//console.log(favorite);
+				console.log(favorite);
 	       		$('#edit_favorite_text')[0].value = favorite.notes;
 	        },
 	        error: ajaxError
@@ -72,7 +72,7 @@ $(function() {
 	
 	//Bind the edit page save button
 	$('#save_button').bind('click', function() {
-		//console.log("Save Button");
+		console.log("Save Button");
 		var favorite_id = $.url().fparam("favorite_id");
 		$.ajax({
 			url: "api/favorites/"+favorite_id,
@@ -86,7 +86,7 @@ $(function() {
 	
 	//Bind the edit page remove button
 	$('#remove_button').bind('click', function() {
-		//console.log("Remove Button");
+		console.log("Remove Button");
 		var favorite_id = $.url().fparam("favorite_id");
 		$.ajax({
 			url: "api/favorites/"+favorite_id,
@@ -101,13 +101,13 @@ $(function() {
 		$(this).attr("data-url",$(this).attr("id"));
 		delete $(this).data()['url'];
 	});
-
+	console.log('page load: done.');
 });
 
 /******************************************************************************/
 
 function ajaxError(jqXHR, textStatus, errorThrown){
-	//console.log('ajaxError '+textStatus+' '+errorThrown);
+	console.log('ajaxError '+textStatus+' '+errorThrown);
 	$('#error_message').remove();
 	$("#error_message_template").tmpl( {errorName: textStatus, errorDescription: errorThrown} ).appendTo( "#error_dialog_content" );
 	$.mobile.changePage($('#error_dialog'), {
