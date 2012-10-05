@@ -1,9 +1,29 @@
+<div data-role="page" id="landing_page">
+    <div data-role='header' data-position='inline' data-theme='d'>
+	    <h1>Career Hive</h1>
+   	</div>
+	
+	<div id="content" data-role="content">
+		<ul id="landing_list" data-role="listview" data-inset="true" data-filter="false" data-theme="c" data-divider-theme="b">
+			<script id="landing_list_row_template" type="text/x-jquery-tmpl">
+				<li class="landing_list_row">
+					<a href=${linkto} data-transition="slide">
+						<h1>${name}</h1>
+					</a>
+				</li>
+			</script>
+		</ul>
+	</div>
+</div>
+
+
+<!--******************************************************************************************************************************-->
 <div data-role="page" id="list_favorites_page">
     <div data-role='header' data-position='inline' data-theme='d'>
 	    <h1>Favorites</h1>
    	</div>
 	
-	<div id="content" data-role="content">
+	<div id="load_favorite_content" data-role="content">
 		<ul id="favorites_list" data-role="listview" data-inset="true" data-filter="true" data-theme="c" data-divider-theme="b">
 			<script id="favorites_list_row_template" type="text/x-jquery-tmpl">
 				<li class="favorites_list_row" id="favorite_${id}">
@@ -47,6 +67,16 @@
 	</div>
 </div>
 <!--******************************************************************************************************************************-->
+<div data-role="page" id="search_companies_page">
+	<div data-role="header" data-position="inline" data-theme='d'>
+		<a href="#landing_page" data-direction="reverse" data-icon="back" data-theme="d">Cancel</a>
+        <h1 class='head_title'>Search Companies</h1>
+		  <h2>Add Your content here</h2>
+        <a id="search_button" href="#" data-direction="reverse" data-icon="plus" data-theme="d">Search</a>
+    </div>
+	</div>
+<!--******************************************************************************************************************************-->
+
 <div data-role="dialog" id="error_dialog" >
 	<div data-role="header" data-position="inline" data-theme='d'>
         <h1 role="heading">Error</h1>

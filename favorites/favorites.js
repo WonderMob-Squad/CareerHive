@@ -8,6 +8,36 @@ $(function() {
 	console.log('favorites widget loading...');
 
 	//Bind to the create so the page gets updated with the listing
+	$('#landing_page').bind('pagebeforeshow',function(event, ui){
+		console.log('landing_page: pagebeforeshow');
+		
+		//Remove the old rows
+		$( ".landing_list_row" ).remove();
+		
+		var menus = [
+      { name: "Search",linkto: "#search_companies_page" },
+      { name: "Favorites", linkto: "#list_favorites_page" }
+     	];
+		
+		$( "#landing_list_row_template" ).tmpl( menus ).appendTo( "#landing_list" );
+		$('#landing_list').listview('refresh');
+
+	
+				
+	
+	});
+	/////////////////////////////////////////////////////////////////
+	//Bind to the create so the page gets updated with the listing
+	$('#search_companies_page').bind('pagebeforeshow',function(event, ui){
+		console.log('search_companies_page: pagebeforeshow');
+		
+	});
+
+
+	
+	
+	//////////////////////////////////////////////////////////////////
+	//Bind to the create so the page gets updated with the listing
 	$('#list_favorites_page').bind('pagebeforeshow',function(event, ui){
 		console.log('list_favorites_page: pagebeforeshow');
 	
