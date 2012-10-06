@@ -1,0 +1,41 @@
+<div data-role="page" id="search_page">
+
+    <div data-role='header' data-position='inline' data-theme='d'>
+	   	<a data-direction="reverse" data-icon="back" data-theme="d" onClick="window.location = '../../favorites_widget/content';">Back</a>
+	    <h1>Search</h1>
+		<a data-role="button" data-inline="true" data-transition="fade" href="#page1" data-icon="grid" data-iconpos="notext" class="ui-btn-right"></a>
+   	</div>
+	
+	<div id="content" data-role="content" style="width=100%;">
+       <select name="Select Major" id="major" data-native-menu="false">
+          <option value="Computer Science">Computer Science</option>
+          <option value="Aerospace Engineering">Aerospace Engineering</option>
+          <option value="Biology">Biology</option>
+          <option value="Industrial Engineering">Industrial Engineering</option>
+          <option value="Mechanical Engineering">Mechanical Engineering</option>
+          <option value="Civil Engineering">Civil Engineering</option>
+          <option value="Business Administration">Business Administration</option>
+          <option value="Computer Engineering">Computer Engineering</option>
+       </select>
+       <select name="Select Degree Level" id="degree_level" data-native-menu="false">
+          <option value="BS">BS</option>
+          <option value="MS">MS</option>
+          <option value="BA">BA</option>
+          <option value="PhD">PhD</option>  
+       </select>
+       <select name="Select Job Type" id="job_type" data-native-menu="false">
+          <option value="Co-op">Co-op</option>
+          <option value="Internship">Internship</option>
+          <option value="Full-time">Full-time</option>
+          <option value="Part-time">Part-time</option>
+          <option value="Contractor">Contractor</option>  
+       </select>
+       <select name="Select Work Autorization" id="work_auth" data-native-menu="false">
+          <option value="H-1 Visa">H-1 Visa</option>
+          <option value="US Citizen">US Citizen</option>
+          <option value="Permanent Resident">Permanent Resident</option>
+          <option value="Valid Employment Authorization Document">Valid Employment Authorization Document</option>  
+       </select>
+	   
+	<div style="position:absolute; bottom:0px; display:block;"><input type="button" name="search" value="Search" onclick="queryResult()" data-theme="b"></div>
+	</div>

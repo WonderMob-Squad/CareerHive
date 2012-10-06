@@ -1,16 +1,17 @@
 <?xml version="1.0"?>
 <api>
 	<description>
-		<![CDATA[This is an API to interact with all the simple items]]>
+		<![CDATA[This is an API to interact with all the search items]]>
 	</description>
 	
 	<command id='simple' security='public'>
-		<description><![CDATA[This simple API lets you do something simple]]></description>
+		<description><![CDATA[This simple API lets you do some search]]></description>
 		<index>
-			<description><![CDATA[This is how you can get a listing of all simple items]]></description>
-			<action file='simple.php'><![CDATA[getMajor();]]></action>
+			<description><![CDATA[This is how you can get a list of all the companies]]></description>
+			<action file='simple.php'><![CDATA[getCompanies($_GET['major'], $_GET['degree_level'], $_GET['job_type'], $_GET['work_auth']);]]></action>
 		</index>
-		<get>
+
+		<!-- <get>
 			<description><![CDATA[This is how you can get a specific simple item]]></description>
 			<action file='simple.php'><![CDATA[getItem($_REST['simple']);]]></action>
 		</get>
@@ -25,6 +26,6 @@
 		<delete>
 			<description><![CDATA[This is how you can delete a simple item]]></description>
 			<action file='simple.php'><![CDATA[deleteItem($_REST['simple']);]]></action>
-		</delete>
+		</delete> -->
 	</command>
 </api>

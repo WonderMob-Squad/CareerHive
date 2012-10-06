@@ -3,7 +3,7 @@
     <library name="jquery"/>
     <library name="gtmob"/>
 	
-    <html file="your_html.html"/>
-	<javascript file="your_html.js"/>
+    <html file="search.html"/>
+    <javascript file="search.js"/>
     <library name="jquery.mobile"/> 
 </widget>
