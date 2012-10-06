@@ -8,7 +8,7 @@
 		<description><![CDATA[This simple API lets you add and remove comments]]></description>
 		
 		<index>
-			<description><![CDATA[This is how you can get a listing of all favorites]]></description>
+			<description><![CDATA[This is how you can get a listing of all comments]]></description>
 			
 			<action file='comments.php'><![CDATA[getMajor();]]></action>
 		</index>
