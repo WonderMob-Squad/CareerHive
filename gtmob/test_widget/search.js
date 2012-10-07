@@ -28,9 +28,10 @@ function queryResult(){
                dataType: "json",
                success: function(data) {
                console.log(data);
-				 localStorage.setItem('companies', data);
-				 alert(data);
-				 console.log(data);
+				 localStorage.setItem('companies', JSON.stringify(data));
+				 //alert(data);
+				// console.log(data);
+				// alert(data.length);
 				 
 				 //Now, close the blocking popup:
 				 //$.mobile.sdCurrentDialog.close();
