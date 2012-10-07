@@ -30,6 +30,7 @@ function queryResult(){
                console.log(data);
 				 localStorage.setItem('companies', data);
 				 alert(data);
+				 console.log(data);
 				 
 				 //Now, close the blocking popup:
 				 //$.mobile.sdCurrentDialog.close();

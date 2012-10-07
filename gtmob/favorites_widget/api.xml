@@ -16,7 +16,7 @@
 		<get>
 			<description><![CDATA[This is how you can get a specific favorite]]></description>
 			
-			<action file='favorites.php'><![CDATA[getFavorite($_REST['favorite_id']);]]></action>
+			<action file='favorites.php'><![CDATA[getFavorite($_REST['favorites']);]]></action>
 		</get>
 		
 		<post>
@@ -34,7 +34,7 @@
 		<put>
 			<description><![CDATA[This is how you can update a favorite]]></description>
 			
-			<action file='favorites.php'><![CDATA[updateFavorite($_REST['favorite'],$_POST['favoriteText']);]]></action>
+			<action file='favorites.php'><![CDATA[updateFavorite($_REST['favorites'],$_POST['favoriteText']);]]></action>
 			
 			<param id='favoriteText'>
 				<description><![CDATA[Favorite Text To Update]]></description>
@@ -46,7 +46,7 @@
 		<delete>
 			<description><![CDATA[This is how you can delete a favorite]]></description>
 			
-			<action file='favorites.php'><![CDATA[deleteFavorite($_REST['favorite']);]]></action>
+			<action file='favorites.php'><![CDATA[deleteFavorite($_REST['favorites']);]]></action>
 		</delete>
 	</command>
 </api>

@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding = "utf-8" ?>
 <widget title="Favorites">
     <library name="jquery"/>
+	 
     <library name="jquery.tmpl"/> 
     <library name="jquery.url"/> 
+
+	 <library name="gtmob"/>
     
     <html file="favorites.html"/>
    <css file="favorites.css"/>
 	<javascript file="favorites.js"/>
+	<library name="jquery.mobile"/> 
 	
-    <library name="jquery.mobile"/> 
-    <library name="gtmob"/>
+    
+    
 </widget>
