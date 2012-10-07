@@ -1,11 +1,14 @@
 <div data-role="page" id="landing_page">
     <div data-role='header' data-position='inline' data-theme='d'>
+	 
 	    <h1>Career Hive</h1>
    	</div>
 	
 	<div id="content" data-role="content">
+		<h3>Welcome to Career Hive!  Click one of the buttons below to get started. The Search button will allow you to search through companies based on different criteria. The Favorites button will display your list of favorite companies</h3>
+
 		<ul id="landing_list" data-role="listview" data-inset="true" data-filter="false" data-theme="c" data-divider-theme="b">
-			<script id="landing_list_row_template" type="text/x-jquery-tmpl">
+				<script id="landing_list_row_template" type="text/x-jquery-tmpl">
 				<li class="landing_list_row">
 					<a href=${linkto} data-transition="slide">
 						<h1>${name}</h1>
@@ -20,6 +23,7 @@
 <!--******************************************************************************************************************************-->
 <div data-role="page" id="list_favorites_page">
     <div data-role='header' data-position='inline' data-theme='d'>
+	 <a href="#landing_page" data-direction="reverse" data-icon="back" data-theme="d">Cancel</a>
 	    <h1>Favorites</h1>
    	</div>
 	
@@ -54,7 +58,7 @@
 <div data-role="page" id="edit_favorites_page">
 	<div data-role="header" data-position="inline" data-theme='d'>
 		<a href="#list_favorites_page" data-direction="reverse" data-icon="back" data-theme="d">Cancel</a>
-        <h1 class='head_title'>Edit Favorite</h1>
+        <h1 class='head_title'>Edit Notes </h1>
         <a id="save_button" href="#list_favorites_page" data-direction="reverse" data-icon="plus" data-theme="d">Save</a>
     </div>
 	<div id="edit_favorite_content" data-role="content">		

@@ -15,7 +15,7 @@ $(function() {
 		$( ".landing_list_row" ).remove();
 		
 		var menus = [
-      { name: "Search",linkto: "#search_companies_page" },
+      { name: "Search",linkto: window.location.origin+"/developer/wondermob/widget/test_widget/content/" },
       { name: "Favorites", linkto: "#list_favorites_page" }
      	];
 		
