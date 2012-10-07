@@ -1,63 +1,16 @@
-<!DOCTYPE html>
-<html>
-    
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>
-        </title>
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-rc.2/jquery.mobile-1.2.0-rc.2.css"
-        />
-        <link rel="stylesheet" href="my.css" />
-        <style>
-            /* App custom styles */
-        </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
         </script>
         <script src="http://code.jquery.com/mobile/1.2.0-rc.2/jquery.mobile-1.2.0-rc.2.js">
         </script>
-        <script src="JavaScript/my.js">
-        </script>
-    </head>
-    
-    <body>
-    	<div data-role="page" id="page1">
-            <div data-theme="a" data-role="header">
-                <a data-role="button" data-inline="true" data-transition="fade" href="#page1"
-                data-icon="grid" data-iconpos="notext" class="ui-btn-right">
-                </a>
-                <h3>
-                    Search Results
-                </h3>
-                <a data-role="button" data-inline="true" data-transition="fade" href="#page1"
-                data-icon="home" data-iconpos="left" class="ui-btn-left">
-                    GTMob
-                </a>
-            </div>
+    	<div data-role="page" id="results">
+            <div data-role='header' data-position='inline' data-theme='d'>
+	 <a href="#landing_page" data-direction="reverse" data-icon="back" data-theme="d">Cancel</a>
+	    <h1>Search Results</h1>
+   	</div>
             <div data-role="content" style="padding: 15px">
-            	<ul data-role="listview" data-theme="b" data-filter="true" data-autodividers="true" data-split-icon="check">
-            		<li><a id="company1" href="companyinfo.html">
-            			<h3>Apple, Inc.</h3>
-            			<p>Cupertino, CA</p>
-            		</a><a href="#action" data-rel="popup" data-position-to="window" data-transition="pop">See Actions</a>
-            		</li>
-            		<li><a id="company1" href="#">
-            			<h3>Coca-Cola Company</h3>
-            			<p>Atlanta, GA</p>
-            		</a><a href="#action" data-rel="popup" data-position-to="window" data-transition="pop">See Actions</a>
-            		</li>
-            		<li><a id="company1" href="#">
-            			<h3>Sugar Cube Corner Bakery</h3>
-            			<p>Ponyville, Equestria</p>
-            		</a><a href="#action" data-rel="popup" data-position-to="window" data-transition="pop">See Actions</a>
-            		</li>
-            		<li><a id="company1" href="#">
-            			<h3>Zappos.com</h3>
-            			<p>Henderson, NV</p>
-            		</a><a href="#action" data-rel="popup" data-position-to="window" data-transition="pop">See Actions</a>
-            		</li>
+            	<ul data-role="listview" id="companylist" data-theme="b" data-filter="true" data-autodividers="true" data-split-icon="check">
             	</ul>
-		<div data-role="popup" id="action" data-theme="d" data-overlay-theme="b" class="ui-content" style="max-width:340px;">
+		<div data-role="popup" id="action" data-theme="c" data-overlay-theme="b" class="ui-content" style="max-width:340px;">
 			<h3>Choose an action.</h3>
 			<p>You can add this company to your checklist, your favorites, or block it for good!</p>
 			<a href="#" data-role="button" data-rel="back" data-theme="b" data-icon="check" data-inline="true" data-mini="true">Add</a>
@@ -67,5 +20,3 @@
             </div>
 
         </div>
-	</body>
-</html>
