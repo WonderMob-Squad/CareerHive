@@ -4,7 +4,7 @@
         </script>
     	<div data-role="page" id="results">
             <div data-role='header' data-position='inline' data-theme='d'>
-	 <a href="#landing_page" data-direction="reverse" data-icon="back" data-theme="d">Cancel</a>
+	 <a href="#landing_page" data-direction="reverse" data-icon="back" data-theme="d">Back</a>
 	    <h1>Search Results</h1>
    	</div>
             <div data-role="content" style="padding: 15px">
@@ -12,4 +12,29 @@
             	</ul>
             </div>
 
+        </div>
+        
+<div data-role="page" id="companyinfo">
+            <div data-role='header' data-position='inline' data-theme='d'>
+	 <a href="#results" data-direction="reverse" data-icon="back" data-theme="d">Back</a>
+	    <h1>Company Info</h1>
+   	</div>
+            <div data-role="content" style="padding: 15px">
+            	<h3><span id="littlename">Company Name</span></h3>
+            	<p><i>Booth: <span id="location">number</span></i></p>
+            	<br />
+            	<div data-role="controlgroup" data-type="horizontal">
+					<a href="#" data-role="button" onclick="starClicked($('#companyname').text())">Star</a>
+				</div>
+				<br />
+				<p><span id="bio">Short company bio goes here.</span></p>
+				<br />
+				<h5>Majors Desired:</h5><span id="majors"></span>
+				<br />
+				<h5>Position Types:</h5><span id="position"></span>
+				<br />
+				<h5>Degree Levels:</h5><span id="degree"></span>
+				<br />
+				<h5>Citizenship Requirements:</h5><span id="citizenship"></span>
+            </div>
         </div>
