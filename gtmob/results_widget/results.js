@@ -52,3 +52,17 @@ $('#companylist').delegate('li', 'vclick', function() {
 	//alert(companyData);
 
 });  
+
+function starClicked() {
+	//alert("Clicked!");
+	
+	$.ajax({
+		url: api/favorites,
+		dataType: "json",
+		data: {
+			user_id:1
+		},
+		success: (function() {
+		
+		})
+}
