@@ -1,6 +1,5 @@
 console.log('RUNNING FAVORITE JAVASCRIPT');
 console.log($('#list_favorites_page'));
-console.log($('#add_favorites_page'));
 console.log($('#edit_favorites_page'));
 
 $(function() {
@@ -15,16 +14,12 @@ $(function() {
 		$( ".landing_list_row" ).remove();
 		
 		var menus = [
-      { name: "Search",linkto: window.location+ "../../test_widget/content/" },
+      { name: "Search",linkto: "#search_companies_page" },
       { name: "Favorites", linkto: "#list_favorites_page" }
      	];
 		
 		$( "#landing_list_row_template" ).tmpl( menus ).appendTo( "#landing_list" );
 		$('#landing_list').listview('refresh');
-
-	
-				
-	
 	});
 	/////////////////////////////////////////////////////////////////
 	//Bind to the create so the page gets updated with the listing
@@ -33,7 +28,57 @@ $(function() {
 		
 	});
 
+///////////////////////////////////////////////////////////////////////////
 
+
+	$('#results').bind('pagebeforeshow', function(event,ui) {
+		    console.log('results: pagebeforeshow');			
+		    $('#companylist').children().remove('li');
+		    var data = localStorage.getItem('companies');
+			 //alert(data);
+			 data = JSON.parse(data);
+			 var elements = data.length;
+			 for (var i = 0; i < elements; i ++) {
+			     if(data[i].name != null) {
+				     //alert(data[i].name);
+					  $('#companylist').append('<li id="' + i + '"><a href="#companyinfo"><h3>' + data[i].name + '</h3><p>Location</p></li>');
+				  }
+		    }
+		    $('#companylist').listview("refresh");
+	});
+
+	$('#companyinfo').bind('pagebeforeshow', function(event,ui) {
+			var data = localStorage.getItem('info');
+			data = JSON.parse(data);
+			//alert(data);
+			//alert(data.name);
+			//
+			$('#littlename').text(data.name);
+			$('#majors').text(data.Majors);
+			$('#location').text(data.Booth);
+			$('#position').text(data.Job_Types);
+			$('#citizenship').text(data.Work_Auth);
+			$('#degree').text(data.Degree_Levels);
+	});
+
+
+	$('#companylist').delegate('li', 'vclick', function() {
+		var eventID = this.id;
+		//alert(this.id);
+		//alert(eventID);
+		
+		var data = localStorage.getItem('companies');
+		console.log(data);
+		data = JSON.parse(data);
+		data = data[eventID];
+		data = JSON.stringify(data);
+		//alert(data);
+		localStorage.setItem('info', data);
+		//var companyData = data[eventID].name;
+		
+		//alert(companyData);
+	
+	}); 
 	
 	
 	//////////////////////////////////////////////////////////////////
@@ -63,25 +108,7 @@ $(function() {
 	
 	});
 	
-	//Bind the add page clear text
-	$('#add_favorites_page').bind('pagebeforeshow', function() {
-		console.log("Add Favorite Page");
-		$('#add_favorite_text')[0].value = "";
-	});
-		
-	//Bind the add page button
-	$('#add_button').bind('click', function() {
-		console.log("Add Button");
-		$.ajax({
-			url: "api/favorite",
-			dataType: "json",
-	        async: false,
-			data: {'favoriteText': $('#add_favorite_text')[0].value},
-			type: 'POST',
-	        error: ajaxError
-		});
-	});
-		
+			
 	//Bind the edit page init text
 	$('#edit_favorites_page').bind('pagebeforeshow', function() {
 		console.log("Edit Favorite Page");
@@ -94,7 +121,7 @@ $(function() {
 			dataType: "json",
 	        success: function(favorite, textStatus, jqXHR) {
 				console.log(favorite);
-	       		$('#edit_favorite_text')[0].value = favorite.notes;
+	       		$('#edit_favorite_text').val(favorite.notes);
 	        },
 	        error: ajaxError
 		});
@@ -107,7 +134,7 @@ $(function() {
 		$.ajax({
 			url: "api/favorites/"+favorite_id,
 			dataType: "json",
-			data: {'favoriteText': $('#edit_favorite_text')[0].value},
+			data: {'favoriteText': $('#edit_favorite_text').val()},
 			headers: {'X-HTTP-Method-Override': 'PUT'},
 			type: 'POST',
 	        error: ajaxError
@@ -134,8 +161,58 @@ $(function() {
 	console.log('page load: done.');
 });
 
+	//bind the star button
+	$('#star_button').bind('click', function() {
+		console.log("Star Button");
+		var attendant = localStorage.getItem('info');
+		attendant = JSON.parse(attendant);
+
+		$.ajax({
+			url: "api/favorites/",
+			dataType: "json",
+			data: {attendant_id: attendant.Attendant_Id, user_id:1},
+			type: 'POST',
+			success: function(favorite) {
+				$.mobile.changePage($("#list_favorites_page"));
+			},
+	      error: ajaxError
+		});
+		return false;
+	});
+
 /******************************************************************************/
 
+function queryResult(){
+	$.ajax({type: "GET",
+           url: "api/simple/",
+           data: {
+			   'major': encodeURIComponent($('#major').val()),
+			   'degree_level': encodeURIComponent($('#degree_level').val()),
+			   'job_type': encodeURIComponent($('#job_type').val()),
+			   'work_auth': encodeURIComponent($('#work_auth').val())
+			   },
+           dataType: "json",
+           success: function(data) {
+             console.log(data);
+				 localStorage.setItem('companies', JSON.stringify(data));
+				 //alert(data);
+				 // console.log(data);
+				 // alert(data.length);
+				 
+				 //Now, close the blocking popup:
+				 //$.mobile.sdCurrentDialog.close();
+				 	
+				 //Finally, force the navigation to the desired page:
+				 $.mobile.changePage($("#results"));
+           }
+   });
+}
+
+$(document).bind('mobileinit',function(){
+   $.mobile.selectmenu.prototype.options.nativeMenu = false;
+});
+
+/******************************************************************************/
 function ajaxError(jqXHR, textStatus, errorThrown){
 	console.log('ajaxError '+textStatus+' '+errorThrown);
 	$('#error_message').remove();

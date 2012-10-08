@@ -24,11 +24,6 @@
 			
 			<action file='favorites.php'><![CDATA[addFavorite($_POST['attendant_id'],$_POST['user_id']);]]></action>
 			
-			<param id='favoriteText'>
-				<description><![CDATA[Favorite Text]]></description>
-				<defaultValue><![CDATA[some default favorite text]]></defaultValue>
-				<exampleValue><![CDATA[some example favorite text]]></exampleValue>
-			</param>
 		</post>
 		
 		<put>
@@ -49,4 +44,12 @@
 			<action file='favorites.php'><![CDATA[deleteFavorite($_REST['favorites']);]]></action>
 		</delete>
 	</command>
+	<command id='simple' security='public'>
+		<description><![CDATA[This simple API lets you do some search]]></description>
+		<index>
+			<description><![CDATA[This is how you can get a list of all the companies]]></description>
+			<action file='simple.php'><![CDATA[getCompanies($_GET['major'], $_GET['degree_level'], $_GET['job_type'], $_GET['work_auth']);]]></action>
+		</index>
+	</command>
+
 </api>
